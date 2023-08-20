@@ -1,0 +1,12 @@
+.container{
+    margin: 15em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 50px; 
+    text-align:justify;
+    text-align: center;
+    
+}
+
