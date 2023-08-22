@@ -3,6 +3,29 @@ import "../style.css"
 
 export default function Bory() {
   const [name, setName] = useState("");
+  const [newName, setNewName] = useState("");
+  const [email, setEmail] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [newTelephone, setNewTelephone] = useState("");
+  // const useStateReturn = useState("")
+  // const name = useStateReturn[0]
+  // const setName = useStateReturn[1]
+
+  // const person = {
+  //   firstName: 'maria',
+  //   age: 18,
+  // }
+
+  // const { firstName } = person;
+  // const firstName = person.firstName
+
+  // const person2 = ['maria', 18]
+
+  // const [nameX, ageX] = person2; 
+
+  // const nameX = person2[0]
+  // const ageX = person2[1]
 
   return (
     <div className='container'>
@@ -10,12 +33,12 @@ export default function Bory() {
         <input type="text"
           required
           name='name'
-          value={name}
-          onChange={e => setName(e.target.value)}
+          value={newName}
+          onChange={e => setNewName(e.target.value)}
           placeholder='Nome'
         />
         <button type='submit'
-          onClick={() => setName([...name, name], setName(""))}>Enviar</button>
+          onClick={() => setName([...name, newName], setNewName(""))}>Enviar</button>
       </label>
       <label className='email'
         htmlFor='email'>
@@ -23,20 +46,31 @@ export default function Bory() {
         <input type='email'
           required
           name='name'
-          placeholder='Email' />
-        <button type='submit'>Enviar</button>
+          placeholder='Email'
+          value={newEmail}
+          onChange={e => setNewEmail(e.target.value)} />
+        <button type='submit'
+          onClick={() => setEmail([...email, newEmail], setNewEmail(""))}>Enviar</button>
       </label>
       <label className='telephone'
         htmlFor='telephone'>
         Telefone:
         <input type="tel" maxLength={11}
           required
-          placeholder=' Telefone' />
+          placeholder=' Telefone' 
+          value={newTelephone}
+          onChange={e => setNewTelephone(e.target.value)}/>
         <button type='submit'
+        onClick={() => setTelephone([...telephone,newTelephone], setNewTelephone(""))}
         >Enviar</button>
       </label>
-      <div>{name}</div>
-      {/* {newName.map(nomes => nomes)} */}
+      <div>
+        {name}
+      </div>
+      <div>
+        {email}
+      </div>
+      <div>{telephone}</div>
     </div>
   )
 }
