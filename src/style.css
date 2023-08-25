@@ -3,10 +3,33 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     padding: 50px; 
-    text-align:justify;
     text-align: center;
-    
+    align-items: center;
+}
+/* input:invalid {
+    -webkit-box-shadow: 0 0 3px red;
+    box-shadow: 0 0 3px red;
+} */
+
+button:hover,
+button:focus {
+    background-color: #E4CDA7;
+}
+.botao{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #D3B792;  
+    margin-top: 1em;
+    width: 20em;
+    text-align: center;
 }
 
+.map{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #D3B792;
+}
