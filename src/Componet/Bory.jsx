@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 import "../style.css"
+import Result from './Result';
 
 export default function Bory() {
-  const [name, setName] = useState("");
-  const [newName, setNewName] = useState("");
+  const [list, setList] = useState([]);
+  const [name, setName] = useState([]);
   const [email, setEmail] = useState("");
-  const [newEmail, setNewEmail] = useState("");
   const [telephone, setTelephone] = useState("");
-  const [newTelephone, setNewTelephone] = useState("");
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState(18);
+  // const [newEmail, setNewEmail] = useState("");
+  // const [newTelephone, setNewTelephone] = useState("");
+
+
+
+
   // const useStateReturn = useState("")
   // const name = useStateReturn[0]
   // const setName = useStateReturn[1]
@@ -33,44 +40,77 @@ export default function Bory() {
         <input type="text"
           required
           name='name'
-          value={newName}
-          onChange={e => setNewName(e.target.value)}
+          value={name}
+          className='input-name'
+          onChange={e => setName(e.target.value)}
           placeholder='Nome'
         />
-        <button type='submit'
-          onClick={() => setName([...name, newName], setNewName(""))}>Enviar</button>
+
       </label>
       <label className='email'
         htmlFor='email'>
         Email:
         <input type='email'
           required
-          name='name'
+          name='email'
+          className='input-email'
           placeholder='Email'
-          value={newEmail}
-          onChange={e => setNewEmail(e.target.value)} />
-        <button type='submit'
-          onClick={() => setEmail([...email, newEmail], setNewEmail(""))}>Enviar</button>
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
       </label>
       <label className='telephone'
         htmlFor='telephone'>
         Telefone:
         <input type="tel" maxLength={11}
           required
-          placeholder=' Telefone' 
-          value={newTelephone}
-          onChange={e => setNewTelephone(e.target.value)}/>
-        <button type='submit'
-        onClick={() => setTelephone([...telephone,newTelephone], setNewTelephone(""))}
-        >Enviar</button>
+          placeholder=' Telefone'
+          autoComplete='on'
+          value={telephone}
+          className='input-telefone'
+          onChange={e => setTelephone(e.target.value)}
+        />
       </label>
       <div>
-        {name}
+        <div>
+          <label>Sexo:</label>
+          <select name="selected" id="sexo" value={gender}
+          className='select'
+          onChange={e => setGender(e.target.value)}>
+            <optgroup>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+            </optgroup>
+          </select>
+            <label>Idade:</label>
+            <input type='number' max={100} min={18}
+            className='input-idade'
+            value={age}
+            onChange={e => setAge(e.target.value) }/>
+          </div>
+          <div>
+        </div>
+      </div><button
+        className='botao'
+        type='submit'
+        onClick={() => {
+          setList([...list, name, email, telephone, gender, age], setList(""),
+            setName([], setEmail(""), setTelephone("")));
+        }}>
+        Enviar
+      </button>
+      <div className='map'>
+        {list.map((item, index) => {
+          return (
+            <textarea key={index}>{item}</textarea>)
+        })}
       </div>
       <div>
-        {email}
+        {/* {console.log(setClic)} */}
+        {/* {newRegister}
+      {email}
+      {telephone} */}
       </div>
-      <div>{telephone}</div>
     </div>
   )
 }
