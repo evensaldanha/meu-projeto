@@ -11,6 +11,21 @@
     -webkit-box-shadow: 0 0 3px red;
     box-shadow: 0 0 3px red;
 } */
+.input-name{
+    width: 15em;
+}
+.input-email{
+    width: 15em;
+}
+.input-telefone{
+    width: 14em;
+}
+.select{
+    width: 10em;
+}
+.input-idade{
+    width: 30px;
+}
 
 button:hover,
 button:focus {
@@ -33,3 +48,4 @@ button:focus {
     border-radius: 10px;
     background-color: #D3B792;
 }
+
