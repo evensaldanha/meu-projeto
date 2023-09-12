@@ -1,8 +1,8 @@
 import React from 'react'
 import  { useState } from 'react';
-import "../style.css"
+import "../src/Componet/register.css";
 
-export default function Register() {
+export default function Register({isOpen,setOpen}) {
  const [list, setList] = useState([]);
   const [name, setName] = useState([]);
   const [email, setEmail] = useState("");
@@ -33,9 +33,10 @@ export default function Register() {
 
   // const nameX = person2[0]
   // const ageX = person2[1]
-
+if(isOpen){
   return (
     <div className='container'>
+      <button className='botaoFechar' onClick={()=> setOpen(!isOpen)}>X</button>
       <label htmlFor='name' className='name'>Nome:
         <input type="text"
           required
@@ -45,7 +46,6 @@ export default function Register() {
           onChange={e => setName(e.target.value)}
           placeholder='Nome'
         />
-
       </label>
       <label className='email'
         htmlFor='email'>
@@ -111,8 +111,10 @@ export default function Register() {
         {/* {console.log(setClic)} */}
         {/* {newRegister}                                                                                               
       {email}
-      {telephone} */}
+      {telephone} */}   
       </div>
     </div>
   )
+}
+ 
 }
