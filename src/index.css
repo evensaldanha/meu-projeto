@@ -5,12 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #8E806A;
+  background-color: #d3d3d3;
+  overflow-y: hidden;
   
 }
-footer{
-  background-color: #E4CDA7;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
