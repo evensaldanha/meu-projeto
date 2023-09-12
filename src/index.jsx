@@ -7,6 +7,7 @@ import Home from "./Componet/Home";
 import Contact from "./Componet/Contact";
 import Template from "./Template";
 import ErroPage from "./Componet/ErroPage";
+import Register from "./Register";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element:<Contact/>
-      }
+      },
     ]
   },
   
