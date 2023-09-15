@@ -36,7 +36,7 @@ export default function Register({isOpen,setOpen}) {
 if(isOpen){
   return (
     <div className='container'>
-      <button className='botaoFechar' onClick={()=> setOpen(!isOpen)}>X</button>
+      <div className='botao-x'><button className='botaoFechar' onClick={()=> setOpen(!isOpen)}>X</button></div>
       <label htmlFor='name' className='name'>Nome:
         <input type="text"
           required
