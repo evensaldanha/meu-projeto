@@ -6,10 +6,23 @@ import Register from '../Register';
 
 export default function Header() {
     const[Open,setOpen]= useState(false);
+    
 
+    const times=()=>{
+      const time=new Date().getHours()
+
+      if(time >= 0 && time < 13){
+        return <p>Bom dia</p>
+      } else if( time >= 13 && time < 18){
+        return <p>Boa tarde</p>
+      }else{
+         return <p>Boa noite</p>
+      }
+    }
 
   return (
     <div className='link'>
+       <div style={{display:"flex", justifyContent:"flex-start",alignItems:"flex-start"}}> {times()}</div>
         <Link style={{textDecoration:" none"}} to="/home">Home</Link>
         <Link style={{textDecoration:" none"}} to="/contact">Contato</Link>
         <button 
@@ -21,4 +34,4 @@ export default function Header() {
    
     </div>
   )
-}
+}       
