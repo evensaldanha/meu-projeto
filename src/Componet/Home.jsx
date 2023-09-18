@@ -42,7 +42,9 @@ export default function Home() {
 
     return (
         <div>
-            <h1 style={retCor(cor)}>Bem vindo!</h1>
+            <h1 
+            className="bem-vindo"
+            style={retCor(cor)}>Bem vindo!</h1>
             <div style={{display:"flex", justifyContent:"flex-start",alignItems:"flex-start"}}> {times()}</div>
             <p>Me chamo Even Saldanha, você está conhecendo meu primeiro projeto em react.
                 Este projeto foi desenvolvido por mim para colocar em prática o que estou estudando. </p>
