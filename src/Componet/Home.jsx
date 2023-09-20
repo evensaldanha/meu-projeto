@@ -15,7 +15,7 @@ export default function Home() {
     }, [])
 
     useEffect(() => {
-        console.log('entrou no useefect')
+        // console.log('entrou no useefect')
         setInterval(getAColor, 3000)
     }, [getAColor])
 
