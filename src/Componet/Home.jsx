@@ -1,32 +1,23 @@
 // import Eu from "../imagrnd/Eu.jpg"
-import { useState } from "react"
-import home from "../Componet/home.css"
+import { useCallback, useEffect, useState } from "react"
+
+const COLORS = ["#000", "#acacac", "#025471"]
 
 export default function Home() {
-    const [cor,setcor]= useState(1);
+    const [color, setColor]= useState(COLORS[0]);
 
-    const preto={color:"#000"};
-    const cinza={color:"#acacac"};
-    const marron={color:"#965aas"}
+    const getAColor = useCallback(() => {
+        const randomColorIndex = Math.floor(Math.random() * COLORS.length)
 
-    const retCor=(c)=>{
-        if(cor==1){
-          return  preto
-        } else if(cor==2){
-            return cinza
-        }else{
-            return marron
-        }
-    }
+        // console.log(randomColorIndex)
 
-    const mudarCor=()=>{
-        setcor(cor+1)
-        if(cor>2){
-            setcor(1)
-        }
-    }
+        setColor(COLORS[randomColorIndex])
+    }, [])
 
-    setInterval(mudarCor,3000)
+    useEffect(() => {
+        console.log('entrou no useefect')
+        setInterval(getAColor, 3000)
+    }, [getAColor])
 
     const times=()=>{
         const time=new Date().getHours()
@@ -44,7 +35,7 @@ export default function Home() {
         <div>
             <h1 
             className="bem-vindo"
-            style={retCor(cor)}>Bem vindo!</h1>
+            style={{ color }}>Bem vindo!</h1>
             <div style={{display:"flex", justifyContent:"flex-start",alignItems:"flex-start"}}> {times()}</div>
             <p>Me chamo Even Saldanha, você está conhecendo meu primeiro projeto em react.
                 Este projeto foi desenvolvido por mim para colocar em prática o que estou estudando. </p>
