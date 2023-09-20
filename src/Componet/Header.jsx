@@ -8,19 +8,11 @@ export default function Header() {
   const [Open, setOpen] = useState(false);
   const [login, setLogin] = useState(false);
 
-  const logged = () => {
-    return "logado"
-  }
-  const logoff = () => {
-    return "Deslogado..."
-  }
-
-
   return (
     <div className='link'>
-      <div className='div-log'>{login ? logged() : logoff()}</div>
+      <div className='div-log'>{login ? "logado" : "logoff"}</div>
       <button onClick={() => setLogin(!login)}
-      className='botao-log'
+        className='botao-log'
       >{login ? "sair" : "entrar"}</button>
       <Link style={{ textDecoration: " none" }} to="/home">Home</Link>
       <Link style={{ textDecoration: " none" }} to="/contact">Contato</Link>
