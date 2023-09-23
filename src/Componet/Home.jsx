@@ -1,5 +1,6 @@
 // import Eu from "../imagrnd/Eu.jpg"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react";
+import { Welcome, Times } from "./Home.styled";
 
 const COLORS = ["#000", "#acacac", "#025471"]
 
@@ -33,10 +34,9 @@ export default function Home() {
 
     return (
         <div>
-            <h1 
-            className="bem-vindo"
-            style={{ color }}>Bem vindo!</h1>
-            <div style={{display:"flex", justifyContent:"flex-start",alignItems:"flex-start"}}> {times()}</div>
+            <Welcome
+            style={{ color }}>Bem vindo!</Welcome>
+            <Times className="times"> {times()}</Times>
             <p>Me chamo Even Saldanha, você está conhecendo meu primeiro projeto em react.
                 Este projeto foi desenvolvido por mim para colocar em prática o que estou estudando. </p>
             <p>Obrigada pela visita!</p>
