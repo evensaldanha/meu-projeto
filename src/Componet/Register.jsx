@@ -1,6 +1,7 @@
 import React from 'react'
 import  { useState } from 'react';
-import "../src/Componet/register.css";
+import { FiX } from "react-icons/fi";
+import { ButtonMain, CloseButton, Container, ListMap } from './Register.styled';
 
 export default function Register({isOpen,setOpen}) {
  const [list, setList] = useState([]);
@@ -9,11 +10,9 @@ export default function Register({isOpen,setOpen}) {
   const [telephone, setTelephone] = useState("");
   const [gender, setGender] = useState("feminino");
   const [age, setAge] = useState(18);
+  
   // const [newEmail, setNewEmail] = useState("");
   // const [newTelephone, setNewTelephone] = useState("");
-
-
-
 
   // const useStateReturn = useState("")
   // const name = useStateReturn[0]
@@ -35,14 +34,14 @@ export default function Register({isOpen,setOpen}) {
   // const ageX = person2[1]
 if(isOpen){
   return (
-    <div className='container'>
-      <button className='botaoFechar' onClick={()=> setOpen(!isOpen)}>X</button>
+    <Container >
+      <CloseButton onClick={()=> setOpen(!isOpen)}><FiX/></CloseButton>
       <label htmlFor='name' className='name'>Nome:
         <input type="text"
           required
           name='name'
           value={name}
-          className='input-name'
+            style={{width: "15em"}}
           onChange={e => setName(e.target.value)}
           placeholder='Nome'
         />
@@ -53,7 +52,7 @@ if(isOpen){
         <input type='email'
           required
           name='email'
-          className='input-email'
+          style={{width: "15em"}}
           placeholder='Email'
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -67,7 +66,7 @@ if(isOpen){
           placeholder=' Telefone'
           autoComplete='on'
           value={telephone}
-          className='input-telefone'
+          style={{width: "15em"}}
           onChange={e => setTelephone(e.target.value)}
         />
       </label>
@@ -75,7 +74,7 @@ if(isOpen){
         <div>
           <label>Sexo:</label>
           <select name="selected" id="sexo" value={gender}
-            className='select'
+            style={{ width: "10em"}}
             required
             onChange={e => setGender(e.target.value)}>
             <optgroup>
@@ -85,35 +84,34 @@ if(isOpen){
           </select>
           <label>Idade:</label>
           <input type='number' max={100} min={18}
-            className='input-idade'
+            style={{width: "30px"}}
             value={age}
             onChange={e => setAge(e.target.value)} />
         </div>
         <div>
         </div>
-      </div><button
-        className='botao'
+      </div><ButtonMain
         type='submit'
         onClick={() => {
           setList([...list, name, email, telephone, gender, age], setList(""),
             setName([], setEmail(""), setTelephone("")));
         }}>
         Enviar
-      </button>
-      <div className='map'>
+      </ButtonMain>
+      <ListMap>
         {list.map((item, index) => {
           return (
             <div key={index}
-              className='div-do-retorno-do-map'>{item}</div>)
+              >{item}</div>)
         })}
-      </div>
+      </ListMap>
       <div>
         {/* {console.log(setClic)} */}
         {/* {newRegister}                                                                                               
       {email}
       {telephone} */}   
       </div>
-    </div>
+    </Container>
   )
 }
  

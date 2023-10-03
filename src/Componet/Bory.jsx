@@ -1,116 +1,116 @@
-import React, { useState } from 'react'
-import "../style.css"
-import Result from './Result';
+// import React, { useState } from 'react'
+// import "../style.css"
+// import Result from './Result';
 
-export default function Bory() {
-  const [list, setList] = useState([]);
-  const [name, setName] = useState([]);
-  const [email, setEmail] = useState("");
-  const [telephone, setTelephone] = useState("");
-  const [gender, setGender] = useState("");
-  const [age, setAge] = useState(18);
-  // const [newEmail, setNewEmail] = useState("");
-  // const [newTelephone, setNewTelephone] = useState("");
-
-
+// export default function Bory() {
+//   const [list, setList] = useState([]);
+//   const [name, setName] = useState([]);
+//   const [email, setEmail] = useState("");
+//   const [telephone, setTelephone] = useState("");
+//   const [gender, setGender] = useState("");
+//   const [age, setAge] = useState(18);
+//   // const [newEmail, setNewEmail] = useState("");
+//   // const [newTelephone, setNewTelephone] = useState("");
 
 
-  // const useStateReturn = useState("")
-  // const name = useStateReturn[0]
-  // const setName = useStateReturn[1]
 
-  // const person = {
-  //   firstName: 'maria',
-  //   age: 18,
-  // }
 
-  // const { firstName } = person;
-  // const firstName = person.firstName
+//   // const useStateReturn = useState("")
+//   // const name = useStateReturn[0]
+//   // const setName = useStateReturn[1]
 
-  // const person2 = ['maria', 18]
+//   // const person = {
+//   //   firstName: 'maria',
+//   //   age: 18,
+//   // }
 
-  // const [nameX, ageX] = person2; 
+//   // const { firstName } = person;
+//   // const firstName = person.firstName
 
-  // const nameX = person2[0]
-  // const ageX = person2[1]
+//   // const person2 = ['maria', 18]
 
-  return (
-    <div className='container'>
-      <label htmlFor='name' className='name'>Nome:
-        <input type="text"
-          required
-          name='name'
-          value={name}
-          className='input-name'
-          onChange={e => setName(e.target.value)}
-          placeholder='Nome'
-        />
+//   // const [nameX, ageX] = person2; 
 
-      </label>
-      <label className='email'
-        htmlFor='email'>
-        Email:
-        <input type='email'
-          required
-          name='email'
-          className='input-email'
-          placeholder='Email'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </label>
-      <label className='telephone'
-        htmlFor='telephone'>
-        Telefone:
-        <input type="tel" maxLength={11}
-          required
-          placeholder=' Telefone'
-          autoComplete='on'
-          value={telephone}
-          className='input-telefone'
-          onChange={e => setTelephone(e.target.value)}
-        />
-      </label>
-      <div>
-        <div>
-          <label>Sexo:</label>
-          <select name="selected" id="sexo" value={gender}
-          className='select'
-          onChange={e => setGender(e.target.value)}>
-            <optgroup>
-              <option value="feminino">Feminino</option>
-              <option value="masculino">Masculino</option>
-            </optgroup>
-          </select>
-            <label>Idade:</label>
-            <input type='number' max={100} min={18}
-            className='input-idade'
-            value={age}
-            onChange={e => setAge(e.target.value) }/>
-          </div>
-          <div>
-        </div>
-      </div><button
-        className='botao'
-        type='submit'
-        onClick={() => {
-          setList([...list, name, email, telephone, gender, age], setList(""),
-            setName([], setEmail(""), setTelephone("")));
-        }}>
-        Enviar
-      </button>
-      <div className='map'>
-        {list.map((item, index) => {
-          return (
-            <textarea key={index}>{item}</textarea>)
-        })}
-      </div>
-      <div>
-        {/* {console.log(setClic)} */}
-        {/* {newRegister}
-      {email}
-      {telephone} */}
-      </div>
-    </div>
-  )
-}
+//   // const nameX = person2[0]
+//   // const ageX = person2[1]
+
+//   return (
+//     <div className='container'>
+//       <label htmlFor='name' className='name'>Nome:
+//         <input type="text"
+//           required
+//           name='name'
+//           value={name}
+//           className='input-name'
+//           onChange={e => setName(e.target.value)}
+//           placeholder='Nome'
+//         />
+
+//       </label>
+//       <label className='email'
+//         htmlFor='email'>
+//         Email:
+//         <input type='email'
+//           required
+//           name='email'
+//           className='input-email'
+//           placeholder='Email'
+//           value={email}
+//           onChange={e => setEmail(e.target.value)}
+//         />
+//       </label>
+//       <label className='telephone'
+//         htmlFor='telephone'>
+//         Telefone:
+//         <input type="tel" maxLength={11}
+//           required
+//           placeholder=' Telefone'
+//           autoComplete='on'
+//           value={telephone}
+//           className='input-telefone'
+//           onChange={e => setTelephone(e.target.value)}
+//         />
+//       </label>
+//       <div>
+//         <div>
+//           <label>Sexo:</label>
+//           <select name="selected" id="sexo" value={gender}
+//           className='select'
+//           onChange={e => setGender(e.target.value)}>
+//             <optgroup>
+//               <option value="feminino">Feminino</option>
+//               <option value="masculino">Masculino</option>
+//             </optgroup>
+//           </select>
+//             <label>Idade:</label>
+//             <input type='number' max={100} min={18}
+//             className='input-idade'
+//             value={age}
+//             onChange={e => setAge(e.target.value) }/>
+//           </div>
+//           <div>
+//         </div>
+//       </div><button
+//         className='button'
+//         type='submit'
+//         onClick={() => {
+//           setList([...list, name, email, telephone, gender, age], setList(""),
+//             setName([], setEmail(""), setTelephone("")));
+//         }}>
+//         Enviar
+//       </button>
+//       <div className='map'>
+//         {list.map((item, index) => {
+//           return (
+//             <textarea key={index}>{item}</textarea>)
+//         })}
+//       </div>
+//       <div>
+//         {/* {console.log(setClic)} */}
+//         {/* {newRegister}
+//       {email}
+//       {telephone} */}
+//       </div>
+//     </div>
+//   )
+// }
