@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedin } from "react-icons/fa"
 import Register from './Register.jsx';
-import { Wrapper, Status, ButtonLogin, ButtonCadastro } from './Header.styled';
+import { Wrapper, Status, ButtonLogin, ButtonCadastro } from './Header.styled.jsx';
 
 export default function Header() {
   const [Open, setOpen] = useState(false);
