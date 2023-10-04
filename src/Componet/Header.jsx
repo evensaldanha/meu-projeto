@@ -21,7 +21,6 @@ export default function Header() {
       <Register isOpen={Open} setOpen={setOpen}></Register>
       <a href='https://www.instagram.com/evensaldanha/'><FaInstagram /> </a>
       <a href='https://www.linkedin.com/in/even-saldanha-b1936b226/' ><FaLinkedin /> </a>
-
     </Wrapper>
   )
 }       

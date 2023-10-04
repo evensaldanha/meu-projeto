@@ -10,13 +10,11 @@ export default function Home() {
     const getAColor = useCallback(() => {
         const randomColorIndex = Math.floor(Math.random() * COLORS.length)
 
-        // console.log(randomColorIndex)
 
         setColor(COLORS[randomColorIndex])
     }, [])
 
     useEffect(() => {
-        // console.log('entrou no useefect')
         setInterval(getAColor, 3000)
     }, [getAColor])
 
